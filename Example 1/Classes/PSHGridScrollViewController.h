@@ -14,13 +14,13 @@
 @class PSGridScrollView;
 
 
-@interface PSHGridScrollViewController : UIViewController {
-
+@interface PSHGridScrollViewController : UIViewController 
+{
 @private
 	PSGridScrollView *_scrollView;
 }
 
-@property(nonatomic, assign) IBOutlet PSGridScrollView *scrollView;
+@property (nonatomic, assign) IBOutlet PSGridScrollView *scrollView;
 
 - (UIButton *) newButton:(int)buttonNumber;
 - (IBAction) loadNewArray:(id)sender;

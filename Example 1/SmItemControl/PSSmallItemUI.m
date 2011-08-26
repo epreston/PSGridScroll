@@ -9,10 +9,12 @@
 // A small view, loaded from a nib, with a few sub views.  Used as an example / template.
 //
 
+
 #import "PSSmallItemUI.h"
 
 
 @implementation PSSmallItemUI
+
 
 @synthesize delegate = _delegate;
 
@@ -22,23 +24,24 @@
 @synthesize itemDetails = _itemDetails;
 
 
-- (IBAction) infoButonAction:(id)sender {
-	
+- (IBAction) infoButonAction:(id)sender 
+{	
 	if (self.delegate) {
 		[self.delegate performInfoAction:self];
 	}
 }
 
 
-#pragma mark -
-#pragma mark Initialization
+#pragma mark - Initialization
 
-- (void)configureDetaults {
+- (void) configureDetaults
+{
 	// Initialize ivars directly.  As a rule, it's best to avoid invoking accessors from an -init...
 	// method, since they may wrongly expect the instance to be fully formed.
 }
 
-- initWithFrame:(CGRect)newFrame {
+- initWithFrame:(CGRect)newFrame 
+{
     self = [super initWithFrame:newFrame];
     if (self) {
 		[self configureDetaults];
@@ -46,18 +49,17 @@
     return self;
 }
 
-- (void)awakeFromNib {
+- (void) awakeFromNib 
+{
 	[super awakeFromNib];
     [self configureDetaults];
 }
 
 
-#pragma mark -
-#pragma mark Memory Management
+#pragma mark - Resource Management
 
-
-- (void)dealloc {
-    
+- (void)dealloc 
+{    
 	[super dealloc];
 }
 

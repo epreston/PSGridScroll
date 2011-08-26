@@ -11,7 +11,8 @@
 
 @class PSHGridScrollViewController;
 
-@interface PSHGridScrollAppDelegate : NSObject <UIApplicationDelegate> {
+@interface PSHGridScrollAppDelegate : NSObject <UIApplicationDelegate> 
+{
     UIWindow *window;
 	UINavigationController *_navigationController;
     PSHGridScrollViewController *viewController;

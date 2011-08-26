@@ -22,16 +22,16 @@
 
 @implementation PSGridScrollView
 
+
 @synthesize itemWidth = _itemWidth;
 @synthesize	itemHeight = _itemHeight;
 @synthesize itemBorder = _itemBorder;
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Property Accessors
 
-- (void)setItemWidth:(int)newWidthValue {
-	
+- (void) setItemWidth:(CGFloat)newWidthValue 
+{	
     // Interface guildlines recommend 44 as the minimum size, remove as required.
     NSParameterAssert(newWidthValue > 43); 
     
@@ -41,8 +41,8 @@
 	[self setNeedsLayout];
 }
 
-- (void)setItemHeight:(int)newHeightValue {
-	
+- (void) setItemHeight:(CGFloat)newHeightValue 
+{	
     // Interface guildlines recommend 44 as the minimum size, remove as required.
     NSParameterAssert(newHeightValue > 43);
     
@@ -52,16 +52,16 @@
 	[self setNeedsLayout];
 }
 
-- (void)setItemBorder:(int)newBorderValue {
-	
+- (void) setItemBorder:(CGFloat)newBorderValue 
+{	
 	_itemBorder = newBorderValue;
 	
 	// Update the display
 	[self setNeedsLayout];
 }
 
-- (NSMutableArray *)gridViews {
-	
+- (NSMutableArray *) gridViews 
+{	
 	// lazy creation
 	if ( _gridViews != nil) {
 		return _gridViews;
@@ -72,11 +72,10 @@
 	return _gridViews;
 }
 
-- (void)setGridViews:(NSMutableArray *)array
+- (void) setGridViews:(NSMutableArray *)array
 {
 	if (_gridViews != array)
     {
-		
 		// Remove the old views
 		for (UIView *view in _gridViews)
 			[view removeFromSuperview];
@@ -101,11 +100,10 @@
 }
 
 
-#pragma mark -
-#pragma mark Methods
+#pragma mark - Methods
 
-- (void)addViewToGrid:(UIView *)newView {
-	
+- (void) addViewToGrid:(UIView *)newView 
+{	
     NSParameterAssert(newView != nil);  // Nil view passed in.
     
 	// Save the view for later
@@ -118,13 +116,11 @@
 	[self addSubview:newView];
 	
 	// Update the display
-	[self setNeedsLayout];
-	
+	[self setNeedsLayout];	
 }
 
 
-#pragma mark -
-#pragma mark View Lifecycle
+#pragma mark - View Lifecycle
 
 /*
 - (void)viewDidLoad {
@@ -134,11 +130,10 @@
  */
 
 
-#pragma mark -
-#pragma mark View Display 
+#pragma mark - View Display
 
-- (void)layoutSubviews {
-
+- (void) layoutSubviews 
+{
 	// We do not need to layout the grid on scrolling
 	if (self.dragging == NO && self.decelerating == NO) {
 		
@@ -149,34 +144,35 @@
 		if (_itemBorder < 0) _itemBorder = 0;
 		
 		// Caluculate the item width and height with a border on both sides
-		int widthWithBorder = _itemWidth + (_itemBorder * 2);
-		int heightWithBorder = _itemHeight + (_itemBorder * 2);
+		CGFloat widthWithBorder = _itemWidth + (_itemBorder * 2);
+		CGFloat heightWithBorder = _itemHeight + (_itemBorder * 2);
 		
 		// calculate the number of columns that can fit
 		CGRect bounds = [self bounds];
-		int cols = bounds.size.width / widthWithBorder;
+		NSUInteger cols = bounds.size.width / widthWithBorder;
 		
 		// Caluculate the spacing to make it use up the margin
-		int itemSpacing = (bounds.size.width - (widthWithBorder * cols)) / (cols + 1);
+		CGFloat itemSpacing = (bounds.size.width - (widthWithBorder * cols)) / (cols + 1);
 		
 		// Used to caluculate the origin for the each view
-		int xOrigin = 0;
-		int yOrigin = 0;
+		CGFloat xOrigin = 0;
+		CGFloat yOrigin = 0;
 		
         // Disable implicit animations during these layer property changes, to make them take effect immediately.
         // Requires QuartzCore.h and CoreGraphics.framework.
-        // BOOL actionsWereDisabled = [CATransaction disableActions];  
-        // [CATransaction setDisableActions:YES];
+        
+        BOOL actionsWereDisabled = [UIView areAnimationsEnabled]; 
+        [UIView setAnimationsEnabled:NO];
         
         
 		for ( UIView *view in self.gridViews ) {
 			
 			// find the new index of the item to draw
-			int index = [self.gridViews indexOfObject:view];
+			NSUInteger index = [self.gridViews indexOfObject:view];
 			
 			// calculate out index in the grid
-			int y = index / cols;
-			int x = index - y * cols;
+			NSUInteger y = index / cols;
+			NSUInteger x = index - y * cols;
 		
 			// calculate the origion for the current view
 			xOrigin = (x * widthWithBorder) + (x * itemSpacing) + itemSpacing + _itemBorder;
@@ -188,21 +184,19 @@
 		}
         
         // Disable Animations -- Restore transaction state.
-        // [CATransaction setDisableActions:actionsWereDisabled];   // Use if linking QuartzCore
+        [UIView setAnimationsEnabled:actionsWereDisabled];
 	
 		// We may have changed orientation or size.
-		[self setContentSize:CGSizeMake (bounds.size.width, yOrigin + _itemHeight + itemSpacing + _itemBorder)];
+		[self setContentSize:CGSizeMake(bounds.size.width, yOrigin + _itemHeight + itemSpacing + _itemBorder)];
 	}
 }
 
 
-#pragma mark -
-#pragma mark Memory Management
+#pragma mark - Resource Management
 
-- (void) dealloc {
-	
+- (void) dealloc 
+{	
 	[_gridViews release];
-	
 	[super dealloc];
 }
 

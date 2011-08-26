@@ -22,16 +22,15 @@
 
 
 
-#pragma mark -
-#pragma mark Property Accessors
+#pragma mark - Property Accessors
 
 @synthesize scrollView = _scrollView;
 
 
-#pragma mark -
-#pragma mark Support Code
+#pragma mark - Support Code
 
-- (UIButton *) newButton:(int)buttonNumber {
+- (UIButton *) newButton:(int)buttonNumber 
+{
 	UIButton *newButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
 	newButton.frame = CGRectMake(0, 0, 200, 200);
 	
@@ -50,10 +49,10 @@
 }
 
 
-#pragma mark -
-#pragma mark Actions
+#pragma mark - Actions
 
--(IBAction)loadNewArray:(id)sender {
+-(IBAction) loadNewArray:(id)sender 
+{
 	NSMutableArray *views = [[NSMutableArray alloc] init];
 	
 	NSArray *nibViews = nil;
@@ -72,23 +71,25 @@
 	[views release];
 }
 
--(IBAction)loadNewItem:(id)sender {
+-(IBAction) loadNewItem:(id)sender 
+{
     NSArray *nibViews = nil;
     nibViews = [[NSBundle mainBundle] loadNibNamed:@"PSSmallItemUI" owner:self options:nil];
     [self.scrollView addViewToGrid:[nibViews objectAtIndex:0] ];
 }
 
-- (IBAction) sliderAction:(UISlider*)sender {
+- (IBAction) sliderAction:(UISlider*)sender 
+{
 	self.scrollView.itemWidth = (int)sender.value;
 	self.scrollView.itemHeight = (int)sender.value;
 }
 
 
-#pragma mark -
-#pragma mark View Creation and Initializer
+#pragma mark - View Creation and Initializer
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+- (void) viewDidLoad 
+{
     [super viewDidLoad];
 	
 	// Set the item width and height
@@ -111,28 +112,31 @@
 	}
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
     // Override to allow orientations other than the default portrait orientation.
     return YES;
 }
 
 
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Resource Management
 
-- (void)didReceiveMemoryWarning {
+- (void) didReceiveMemoryWarning 
+{
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
+- (void) viewDidUnload 
+{
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
 
-- (void)dealloc {
+- (void) dealloc 
+{
     [super dealloc];
 }
 

@@ -12,17 +12,17 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class PSSmallItemUI;
 
 @protocol PSSmallItemUIDelegate < NSObject >
-- (void) performInfoAction: (PSSmallItemUI *) aSmallItem;
+- (void) performInfoAction:(PSSmallItemUI *) aSmallItem;
 @end
 
 
 
-@interface PSSmallItemUI : UIView {
-	
-	
+@interface PSSmallItemUI : UIView 
+{
 @private	
 	UILabel						*_itemTitle;
 	UILabel						*_itemSubTitle;
@@ -31,7 +31,7 @@
 	id < PSSmallItemUIDelegate > _delegate;
 }
 
-@property(nonatomic, retain) id delegate;
+@property(nonatomic, assign) id delegate;
 
 @property(nonatomic, assign) IBOutlet UILabel		*itemTitle;
 @property(nonatomic, assign) IBOutlet UILabel		*itemSubTitle;

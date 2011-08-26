@@ -13,20 +13,20 @@
 #import <UIKit/UIKit.h>
 
 
-@interface PSGridScrollView : UIScrollView {
-
+@interface PSGridScrollView : UIScrollView 
+{
 @private
-	int						_itemBorder;
-	int						_itemWidth;
-	int						_itemHeight;
+	CGFloat					_itemBorder;
+	CGFloat					_itemWidth;
+	CGFloat					_itemHeight;
 	NSMutableArray			*_gridViews;
 }
 
 @property (nonatomic, copy) NSMutableArray	*gridViews;
-@property (nonatomic) int					itemWidth;
-@property (nonatomic) int					itemHeight;
-@property (nonatomic) int					itemBorder;
+@property (nonatomic, assign) CGFloat		itemWidth;
+@property (nonatomic, assign) CGFloat		itemHeight;
+@property (nonatomic, assign) CGFloat		itemBorder;
 
-- (void)addViewToGrid:(UIView *)newView;
+- (void) addViewToGrid:(UIView *)newView;
 
 @end
