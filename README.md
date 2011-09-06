@@ -15,12 +15,7 @@ PSGridScroll should be considered an simple solution for automatically displayin
 
 This project follows the [SemVer](http://semver.org/) standard. The API may change in backwards-incompatible ways before the 1.0 release.
 
-The goal of PSGridScroll is to build a simple UI view designed specifically for the iPad.
-
-
-# Known Issues
-
-See [Issues](https://github.com/epreston/PSGridScroll/issues).
+The goal of PSGridScroll is to build a UI view container designed specifically for the iPad.
 
 
 # Documentation
