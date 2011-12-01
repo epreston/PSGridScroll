@@ -14,13 +14,6 @@
 
 
 @interface PSGridScrollView : UIScrollView 
-{
-@private
-	CGFloat					_itemBorder;
-	CGFloat					_itemWidth;
-	CGFloat					_itemHeight;
-	NSMutableArray			*_gridViews;
-}
 
 @property (nonatomic, copy) NSMutableArray	*gridViews;
 @property (nonatomic, assign) CGFloat		itemWidth;

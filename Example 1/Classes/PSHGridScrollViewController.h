@@ -9,16 +9,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "PSSmallItemUI.h"
-
 @class PSGridScrollView;
 
 
 @interface PSHGridScrollViewController : UIViewController 
-{
-@private
-	PSGridScrollView *_scrollView;
-}
 
 @property (nonatomic, assign) IBOutlet PSGridScrollView *scrollView;
 

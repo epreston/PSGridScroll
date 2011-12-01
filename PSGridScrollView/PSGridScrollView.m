@@ -20,6 +20,18 @@
 #define OPAQUE_ITEM_VIEWS 1
 
 
+@interface PSGridScrollView ()
+{
+@private
+	CGFloat					_itemBorder;
+	CGFloat					_itemWidth;
+	CGFloat					_itemHeight;
+	NSMutableArray			*_gridViews;
+}
+
+@end
+
+
 @implementation PSGridScrollView
 
 

@@ -11,12 +11,22 @@
 #import "PSHGridScrollViewController.h"
 
 
+@interface PSHGridScrollAppDelegate ()
+{
+    UIWindow *window_;
+	UINavigationController *navigationController_;
+    PSHGridScrollViewController *viewController_;
+}
+
+@end
+
+
 @implementation PSHGridScrollAppDelegate
 
 
-@synthesize window;
-@synthesize navigationController = _navigationController;
-@synthesize viewController;
+@synthesize window = window_;
+@synthesize navigationController = navigationController_;
+@synthesize viewController = viewController_;
 
 
 #pragma mark - Application Lifecycle
@@ -24,8 +34,8 @@
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {    
     // Override point for customization after app launch. 
-    [window addSubview:_navigationController.view];
-    [window makeKeyAndVisible];
+    [window_ addSubview:navigationController_.view];
+    [window_ makeKeyAndVisible];
 
 	return YES;
 }
@@ -63,8 +73,8 @@
 
 - (void) dealloc 
 {
-    [_navigationController release];
-    [window release];
+    [navigationController_ release];
+    [window_ release];
     [super dealloc];
 }
 

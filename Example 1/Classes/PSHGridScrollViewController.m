@@ -18,13 +18,21 @@
 #define ITEM_BORDER 10
 
 
+@interface PSHGridScrollViewController ()
+{
+@private
+    PSGridScrollView *scrollView_;
+}
+@end
+
+
 @implementation PSHGridScrollViewController
 
 
 
 #pragma mark - Property Accessors
 
-@synthesize scrollView = _scrollView;
+@synthesize scrollView = scrollView_;
 
 
 #pragma mark - Support Code

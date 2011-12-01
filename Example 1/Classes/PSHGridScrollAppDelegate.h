@@ -11,17 +11,12 @@
 
 @class PSHGridScrollViewController;
 
+
 @interface PSHGridScrollAppDelegate : NSObject <UIApplicationDelegate> 
-{
-    UIWindow *window;
-	UINavigationController *_navigationController;
-    PSHGridScrollViewController *viewController;
-}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet PSHGridScrollViewController *viewController;
-
 
 @end
 

@@ -43,6 +43,7 @@
 				<string key="NSFrameSize">{768, 1024}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -79,6 +80,7 @@
 				<array class="NSMutableArray" key="IBUIViewControllers">
 					<object class="IBUIViewController" id="560618577">
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="358351766">
+							<reference key="IBUINavigationBar"/>
 							<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="575269941">
 								<string key="IBUITitle">Add One Item</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -86,9 +88,12 @@
 								<reference key="IBUINavigationItem" ref="358351766"/>
 							</object>
 							<object class="IBUISlider" key="IBUITitleView" id="475807348">
-								<nil key="NSNextResponder"/>
+								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{231, 11}, {307, 23}}</string>
+								<string key="NSFrame">{{230, 11}, {307, 23}}</string>
+								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
