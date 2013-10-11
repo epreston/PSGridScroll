@@ -33,7 +33,8 @@
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {    
-    // Override point for customization after app launch. 
+    // Override point for customization after app launch.
+    [window_ setRootViewController:navigationController_];
     [window_ addSubview:navigationController_.view];
     [window_ makeKeyAndVisible];
 
