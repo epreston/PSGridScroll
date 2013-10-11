@@ -70,7 +70,7 @@
         nibViews = [[NSBundle mainBundle] loadNibNamed:@"PSSmallItemUI" owner:self options:nil];
 		
 		[views addObject:[self newButton:i]];
-		[views addObject:[nibViews objectAtIndex:0]];
+		[views addObject:nibViews[0]];
 	}
 	
 	// Add array to grid
@@ -83,7 +83,7 @@
 {
     NSArray *nibViews = nil;
     nibViews = [[NSBundle mainBundle] loadNibNamed:@"PSSmallItemUI" owner:self options:nil];
-    [self.scrollView addViewToGrid:[nibViews objectAtIndex:0] ];
+    [self.scrollView addViewToGrid:nibViews[0] ];
 }
 
 - (IBAction) sliderAction:(UISlider*)sender 
@@ -113,7 +113,7 @@
         nibViews = [[NSBundle mainBundle] loadNibNamed:@"PSSmallItemUI" owner:self options:nil];
 		
 		// Add elements one by one
-		[self.scrollView addViewToGrid:[nibViews objectAtIndex:0] ];
+		[self.scrollView addViewToGrid:nibViews[0] ];
 		
 		// Add a button
 		[self.scrollView addViewToGrid:[self newButton:i]];
