@@ -21,7 +21,7 @@
 @interface PSHGridScrollViewController ()
 {
 @private
-    PSGridScrollView *scrollView_;
+    PSGridScrollView *__weak scrollView_;
 }
 @end
 
@@ -39,7 +39,7 @@
 
 - (UIButton *) newButton:(int)buttonNumber 
 {
-	UIButton *newButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+	UIButton *newButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	newButton.frame = CGRectMake(0, 0, 200, 200);
 	
 	// Even / Odd
@@ -76,7 +76,6 @@
 	// Add array to grid
 	self.scrollView.gridViews = views;
 	
-	[views release];
 }
 
 -(IBAction) loadNewItem:(id)sender 
@@ -143,9 +142,5 @@
 	// e.g. self.myOutlet = nil;
 }
 
-- (void) dealloc 
-{
-    [super dealloc];
-}
 
 @end

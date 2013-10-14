@@ -72,12 +72,6 @@
     // recreated (or reloaded from disk) later.
 }
 
-- (void) dealloc 
-{
-    [navigationController_ release];
-    [window_ release];
-    [super dealloc];
-}
 
 
 @end

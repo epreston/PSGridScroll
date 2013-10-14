@@ -17,10 +17,10 @@
 
 @property(nonatomic, weak) id delegate;
 
-@property(nonatomic, assign) IBOutlet UILabel		*itemTitle;
-@property(nonatomic, assign) IBOutlet UILabel		*itemSubTitle;
-@property(nonatomic, assign) IBOutlet UILabel		*itemType;
-@property(nonatomic, assign) IBOutlet UITextView	*itemDetails;
+@property(nonatomic, weak) IBOutlet UILabel		*itemTitle;
+@property(nonatomic, weak) IBOutlet UILabel		*itemSubTitle;
+@property(nonatomic, weak) IBOutlet UILabel		*itemType;
+@property(nonatomic, weak) IBOutlet UITextView	*itemDetails;
 
 - (IBAction) infoButonAction:(id)sender;
 

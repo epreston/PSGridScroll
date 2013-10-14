@@ -14,7 +14,7 @@
 
 @interface PSHGridScrollViewController : UIViewController 
 
-@property (nonatomic, assign) IBOutlet PSGridScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet PSGridScrollView *scrollView;
 
 - (UIButton *) newButton:(int)buttonNumber;
 - (IBAction) loadNewArray:(id)sender;
