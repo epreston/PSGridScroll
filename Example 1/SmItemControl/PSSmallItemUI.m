@@ -20,7 +20,7 @@
 	UILabel						*_itemSubTitle;
 	UILabel						*_itemType;
 	UITextView					*_itemDetails;
-	id < PSSmallItemUIDelegate > _delegate;
+	__weak id < PSSmallItemUIDelegate > _delegate;
 }
 
 @end
