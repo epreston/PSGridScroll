@@ -11,7 +11,7 @@ There is an iPad example application to demonstrate the features of PSGridScroll
 
 # Status
 
-PSGridScroll should be considered an simple solution for automatically displaying an arbitrary number of similar sized objects in a vertical scrolling grid. 
+PSGridScroll should be considered an simple solution for automatically displaying an arbitrary number of similar sized objects in a vertical scrolling grid. Those looking for a reference counted implementation should look for a "Non ARC 1.0" branch.
 
 This project follows the [SemVer](http://semver.org/) standard. The API may change in backwards-incompatible ways before the 1.0 release.
 
