@@ -91,12 +91,11 @@
 		// Remove the old views
 		for (UIView *view in _gridViews)
 			[view removeFromSuperview];
-		[_gridViews release];
 		
 		if ( array != nil ) {
 			
 			// Copy the array
-			_gridViews = [array retain];
+			_gridViews = array;
 			
 			// Add the new views
 			for (UIView *view in _gridViews)
@@ -206,10 +205,5 @@
 
 #pragma mark - Resource Management
 
-- (void) dealloc 
-{	
-	[_gridViews release];
-	[super dealloc];
-}
 
 @end

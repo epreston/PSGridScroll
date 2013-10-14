@@ -16,10 +16,10 @@
 @interface PSSmallItemUI ()
 {
 @private	
-	UILabel						*_itemTitle;
-	UILabel						*_itemSubTitle;
-	UILabel						*_itemType;
-	UITextView					*_itemDetails;
+	UILabel						*__weak _itemTitle;
+	UILabel						*__weak _itemSubTitle;
+	UILabel						*__weak _itemType;
+	UITextView					*__weak _itemDetails;
 	__weak id < PSSmallItemUIDelegate > _delegate;
 }
 
@@ -71,10 +71,6 @@
 
 #pragma mark - Resource Management
 
-- (void)dealloc 
-{    
-	[super dealloc];
-}
 
 
 @end
