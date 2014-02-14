@@ -1,4 +1,3 @@
-
 # PSGridScroll
 
 PSGridScroll is a view control that lays out a list of child views into a scrollable grid.  
@@ -25,7 +24,7 @@ You can generate documentation with [doxygen](http://www.doxygen.org). The examp
 
 # Copyright and License
 
-Copyright 2010 Preston Software.
+Copyright 2014 Preston Software.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this work except in compliance with the License.
