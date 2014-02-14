@@ -1,0 +1,13 @@
+language: objective-c
+xcode_project: PSHGridScroll.xcodeproj
+xcode_scheme: PSHGridScroll
+xcode_sdk: iphonesimulator
+
+before_install:
+  - git submodule update --init --recursive
+  - cd Example\ 1/
+
+# whitelist
+branches:
+  only:
+    - master
