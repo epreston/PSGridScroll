@@ -1,5 +1,7 @@
 # PSGridScroll
 
+[![Build Status](https://travis-ci.org/epreston/PSGridScroll.png?branch=master)](https://travis-ci.org/epreston/PSGridScroll)
+
 PSGridScroll is a view control that lays out a list of child views into a scrollable grid.  
 
 
