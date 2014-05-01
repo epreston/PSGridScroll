@@ -39,9 +39,9 @@
 		4F5BBE4813FA1EE700F314E7 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4F70163211E60A7000C431E7 /* PSGridScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSGridScrollView.h; path = ../../PSGridScrollView/PSGridScrollView.h; sourceTree = "<group>"; };
 		4F70163311E60A7000C431E7 /* PSGridScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSGridScrollView.m; path = ../../PSGridScrollView/PSGridScrollView.m; sourceTree = "<group>"; };
-		4FD053DC11E6DFB1008521AF /* PSSmallItemUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSSmallItemUI.h; path = ../SmItemControl/PSSmallItemUI.h; sourceTree = "<group>"; };
-		4FD053DD11E6DFB1008521AF /* PSSmallItemUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSSmallItemUI.m; path = ../SmItemControl/PSSmallItemUI.m; sourceTree = "<group>"; };
-		4FD053DE11E6DFB1008521AF /* PSSmallItemUI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PSSmallItemUI.xib; path = ../SmItemControl/PSSmallItemUI.xib; sourceTree = "<group>"; };
+		4FD053DC11E6DFB1008521AF /* PSSmallItemUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSmallItemUI.h; sourceTree = "<group>"; };
+		4FD053DD11E6DFB1008521AF /* PSSmallItemUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSmallItemUI.m; sourceTree = "<group>"; };
+		4FD053DE11E6DFB1008521AF /* PSSmallItemUI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSSmallItemUI.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PSHGridScroll-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PSHGridScroll-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +80,10 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4F37CED1180B8AFC0050C34F /* README.md */,
+				4F0E10991407DF3A009B9214 /* Doxyfile */,
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97315FDCFA39411CA2CEA /* Target */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -89,15 +91,14 @@
 			name = CustomTemplate;
 			sourceTree = "<group>";
 		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+		29B97315FDCFA39411CA2CEA /* Target */ = {
 			isa = PBXGroup;
 			children = (
-				4F37CED1180B8AFC0050C34F /* README.md */,
-				4F0E10991407DF3A009B9214 /* Doxyfile */,
 				32CA4F630368D1EE00C91783 /* PSHGridScroll_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				8D1107310486CEB800E47090 /* PSHGridScroll-Info.plist */,
 			);
-			name = "Other Sources";
+			path = Target;
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -105,7 +106,6 @@
 			children = (
 				4FC8ED9213FD62520021EB96 /* Icons */,
 				4FC8ED9113FD61FA0021EB96 /* Interface */,
-				8D1107310486CEB800E47090 /* PSHGridScroll-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4FC8ED9913FD634D0021EB96 /* PSGridScrollView */,
-				4FD053C311E6DD93008521AF /* Custom Control */,
+				4FD053C311E6DD93008521AF /* SmItemControl */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -173,14 +173,15 @@
 			name = PSGridScrollView;
 			sourceTree = "<group>";
 		};
-		4FD053C311E6DD93008521AF /* Custom Control */ = {
+		4FD053C311E6DD93008521AF /* SmItemControl */ = {
 			isa = PBXGroup;
 			children = (
 				4FD053DC11E6DFB1008521AF /* PSSmallItemUI.h */,
 				4FD053DD11E6DFB1008521AF /* PSSmallItemUI.m */,
 				4FD053DE11E6DFB1008521AF /* PSSmallItemUI.xib */,
 			);
-			name = "Custom Control";
+			name = SmItemControl;
+			path = ../SmItemControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,10 +290,10 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = PSHGridScroll_Prefix.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Target/PSHGridScroll_Prefix.pch";
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
-				INFOPLIST_FILE = "PSHGridScroll-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Target/PSHGridScroll-Info.plist";
 				PRODUCT_NAME = PSHGridScroll;
 			};
 			name = Debug;
@@ -304,10 +305,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = PSHGridScroll_Prefix.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Target/PSHGridScroll_Prefix.pch";
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
-				INFOPLIST_FILE = "PSHGridScroll-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Target/PSHGridScroll-Info.plist";
 				PRODUCT_NAME = PSHGridScroll;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -372,10 +373,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = PSHGridScroll_Prefix.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Target/PSHGridScroll_Prefix.pch";
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
-				INFOPLIST_FILE = "PSHGridScroll-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Target/PSHGridScroll-Info.plist";
 				PRODUCT_NAME = PSHGridScroll;
 				VALIDATE_PRODUCT = YES;
 			};
