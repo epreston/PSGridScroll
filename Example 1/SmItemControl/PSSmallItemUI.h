@@ -9,13 +9,14 @@
 // A small view, loaded from a nib, with a few sub views.  Used as an example / template.
 //
 
-
 #import <UIKit/UIKit.h>
+
+@protocol PSSmallItemUIDelegate;
 
 
 @interface PSSmallItemUI : UIView
 
-@property(nonatomic, weak) id delegate;
+@property(nonatomic, weak) id <PSSmallItemUIDelegate> delegate;
 
 @property(nonatomic, weak) IBOutlet UILabel		*itemTitle;
 @property(nonatomic, weak) IBOutlet UILabel		*itemSubTitle;
@@ -25,7 +26,6 @@
 - (IBAction) infoButonAction:(id)sender;
 
 @end
-
 
 
 @protocol PSSmallItemUIDelegate < NSObject >

@@ -9,7 +9,6 @@
 //  to fill the scrollview width evenly.
 //
 
-
 #import "PSGridScrollView.h"
 
 
@@ -23,9 +22,6 @@
 @interface PSGridScrollView ()
 {
 @private
-	CGFloat					_itemBorder;
-	CGFloat					_itemWidth;
-	CGFloat					_itemHeight;
 	NSMutableArray			*_gridViews;
 }
 
@@ -33,11 +29,6 @@
 
 
 @implementation PSGridScrollView
-
-
-@synthesize itemWidth = _itemWidth;
-@synthesize	itemHeight = _itemHeight;
-@synthesize itemBorder = _itemBorder;
 
 
 #pragma mark - Property Accessors
@@ -131,17 +122,7 @@
 }
 
 
-#pragma mark - View Lifecycle
-
-/*
-- (void)viewDidLoad {
-	// [super viewDidLoad];
-	
-}
- */
-
-
-#pragma mark - View Display
+#pragma mark - UIView
 
 - (void) layoutSubviews 
 {
@@ -201,9 +182,6 @@
 		[self setContentSize:CGSizeMake(bounds.size.width, yOrigin + _itemHeight + itemSpacing + _itemBorder)];
 	}
 }
-
-
-#pragma mark - Resource Management
 
 
 @end

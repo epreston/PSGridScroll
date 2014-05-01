@@ -6,7 +6,6 @@
 //  Copyright Preston Software 2010. All rights reserved.
 //
 
-
 #import <UIKit/UIKit.h>
 
 @class PSHGridScrollViewController;

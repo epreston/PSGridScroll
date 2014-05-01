@@ -6,7 +6,6 @@
 //  Copyright Preston Software 2010. All rights reserved.
 //
 
-
 #import "PSHGridScrollViewController.h"
 
 #import "PSGridScrollView.h"
@@ -18,21 +17,7 @@
 #define ITEM_BORDER 10
 
 
-@interface PSHGridScrollViewController ()
-{
-@private
-    PSGridScrollView *__weak scrollView_;
-}
-@end
-
-
 @implementation PSHGridScrollViewController
-
-
-
-#pragma mark - Property Accessors
-
-@synthesize scrollView = scrollView_;
 
 
 #pragma mark - Support Code
@@ -92,7 +77,7 @@
 }
 
 
-#pragma mark - View Creation and Initializer
+#pragma mark - UIViewController
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void) viewDidLoad 
@@ -118,15 +103,6 @@
 		[self.scrollView addViewToGrid:[self newButton:i]];
 	}
 }
-
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
-{
-    // Override to allow orientations other than the default portrait orientation.
-    return YES;
-}
-
-
-#pragma mark - Resource Management
 
 - (void) didReceiveMemoryWarning 
 {

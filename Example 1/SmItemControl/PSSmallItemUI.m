@@ -9,32 +9,10 @@
 // A small view, loaded from a nib, with a few sub views.  Used as an example / template.
 //
 
-
 #import "PSSmallItemUI.h"
 
 
-@interface PSSmallItemUI ()
-{
-@private	
-	UILabel						*__weak _itemTitle;
-	UILabel						*__weak _itemSubTitle;
-	UILabel						*__weak _itemType;
-	UITextView					*__weak _itemDetails;
-	__weak id < PSSmallItemUIDelegate > _delegate;
-}
-
-@end
-
-
 @implementation PSSmallItemUI
-
-
-@synthesize delegate = _delegate;
-
-@synthesize itemTitle = _itemTitle;
-@synthesize itemSubTitle = _itemSubTitle; 
-@synthesize itemType = _itemType;
-@synthesize itemDetails = _itemDetails;
 
 
 - (IBAction) infoButonAction:(id)sender 
@@ -44,14 +22,13 @@
 	}
 }
 
-
-#pragma mark - Initialization
-
 - (void) configureDetaults
 {
 	// Initialize ivars directly.  As a rule, it's best to avoid invoking accessors from an -init...
 	// method, since they may wrongly expect the instance to be fully formed.
 }
+
+#pragma mark - UIView
 
 - initWithFrame:(CGRect)newFrame 
 {
@@ -67,10 +44,6 @@
 	[super awakeFromNib];
     [self configureDetaults];
 }
-
-
-#pragma mark - Resource Management
-
 
 
 @end

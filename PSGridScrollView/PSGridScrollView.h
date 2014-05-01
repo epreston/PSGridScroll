@@ -8,7 +8,6 @@
 //  Attempts to show the maximum number of items per row, creates spacing between 
 //  the items to fill the scrollview widtch evenly.
 //
-//
 
 #import <UIKit/UIKit.h>
 
