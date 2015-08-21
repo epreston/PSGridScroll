@@ -30,7 +30,7 @@
 
 #pragma mark - UIView
 
-- initWithFrame:(CGRect)newFrame 
+- (instancetype) initWithFrame:(CGRect)newFrame 
 {
     self = [super initWithFrame:newFrame];
     if (self) {
