@@ -227,13 +227,8 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Preston Software";
-				TargetAttributes = {
-					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = QNF5V32SN5;
-					};
-				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PSHGridScroll" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -294,6 +289,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Target/PSHGridScroll-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prestonsoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = PSHGridScroll;
 			};
 			name = Debug;
@@ -309,6 +305,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Target/PSHGridScroll-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prestonsoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = PSHGridScroll;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -377,6 +374,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Target/PSHGridScroll-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prestonsoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = PSHGridScroll;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -395,6 +393,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
